@@ -1,5 +1,7 @@
 # korea-holidays
 
+[![Build Status](https://travis-ci.com/kkweon/korea-holidays.svg?branch=master)](https://travis-ci.com/kkweon/korea-holidays)
+
 *korea-holidays* is a Haskell library to check if a given date is a Korean
 Holiday.
 
