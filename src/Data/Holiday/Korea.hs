@@ -4,7 +4,7 @@
 Module      : Data.Holiday.Korea
 Description : The module contains Korea Holidays
 Copyright   : (c) Kyung Mo Kweon
-License     : BSD
+License     : MIT
 Maintainer  : kkweon@gmail.com
 Stability   : experimental
 Portability : POSIX
