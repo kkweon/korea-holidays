@@ -1,5 +1,5 @@
 name:                korea-holidays
-version:             0.1.0.1
+version:             0.1.0.2
 github:              "githubuser/korea-holidays"
 license:             MIT
 author:              "Kyung Mo Kweon"
@@ -10,7 +10,8 @@ extra-source-files:
 - README.md
 - ChangeLog.md
 
-data-dir: data
+data-files:
+- data/ko_holidays.yaml
 
 # Metadata used when publishing your package
 synopsis:            Korea Holidays

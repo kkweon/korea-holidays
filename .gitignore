@@ -2,3 +2,4 @@
 korea-holidays.cabal
 *~
 dist/
+.DS_Store
