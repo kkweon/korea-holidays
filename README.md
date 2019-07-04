@@ -1,8 +1,10 @@
 # korea-holidays
 
 [![Build Status](https://travis-ci.com/kkweon/korea-holidays.svg?branch=master)](https://travis-ci.com/kkweon/korea-holidays)
+![Hackage-Deps](https://img.shields.io/hackage-deps/v/korea-holidays.svg)
+![Hackage](https://img.shields.io/hackage/v/korea-holidays.svg)
 
-*korea-holidays* is a Haskell library to check if a given date is a Korean
+**korea-holidays** is a Haskell library to check if a given date is a Korean
 Holiday.
 
 ## Usage
