@@ -8,12 +8,12 @@ import Test.Hspec (Spec, describe, it, shouldBe)
 spec :: Spec
 spec =
   describe "Data.Holiday.Korea" $ do
-    it "returns a SinJeong when xxxx/1/1" $
+    it "returns New Year's Day when 2000/1/1" $
       Korea.getHoliday 2000 1 1 `shouldBe`
       Just
         KM.Holiday
           {date = KM.MD (1, 1), name = "New Year's Day", lunar = Nothing}
-    it "returns the Independence Movement Day 3/1" $
+    it "returns March 1 Movement Day when 2019/3/1" $
       Korea.getHoliday 2019 3 1 `shouldBe`
       Just
         KM.Holiday

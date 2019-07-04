@@ -10,12 +10,15 @@ Holiday.
 ## Usage
 
 ```haskell
-import qualified Data.Holiday.Korea as Korea
+Korea.getHoliday 2000 1 1 `shouldBe`
+      Just
+        Holiday
+          {date = KM.MD (1, 1), name = "New Year's Day", lunar = Nothing}
 
-Korea.getHoliday 2000 1 1 `shouldBe` Just Korea.Holiday
-  { Korea.date = Korea.MD (1, 1)
-  , Korea.name = "SinJeong"
-  }
+Korea.getHoliday 2019 3 1 `shouldBe`
+      Just
+        Holiday
+          {date = KM.MD (3, 1), name = "March 1 Movement Day", lunar = Nothing}
 ```
 
 ## Add to your dependency
@@ -23,7 +26,6 @@ Korea.getHoliday 2000 1 1 `shouldBe` Just Korea.Holiday
 In your `package.yaml`
 
 ```yaml
-library:
-  dependencies:
-  - korea-holidays
+dependencies:
+- korea-holidays
 ```
