@@ -11,7 +11,7 @@ extra-source-files:
 - ChangeLog.md
 
 # Metadata used when publishing your package
-# synopsis:            Short description of your package
+synopsis:            Korea Holidays
 category:            Time
 
 # To avoid duplicated efforts in documentation and dealing with the
@@ -21,20 +21,18 @@ description:         Please see the README on GitHub at <https://github.com/kkwe
 
 dependencies:
 - base >= 4.7 && < 5
+- split
+- yaml
+- monad-extras
+- aeson
+- template-haskell
 
 library:
   source-dirs: src
+  exposed-modules:
+  - Data.Holiday.Korea
+  - Data.Holiday.Model
 
-executables:
-  korea-holidays-exe:
-    main:                Main.hs
-    source-dirs:         app
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - korea-holidays
 
 tests:
   korea-holidays-test:
