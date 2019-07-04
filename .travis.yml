@@ -1,40 +1,28 @@
-# This is the simple Travis configuration, which is intended for use
-# on applications which do not require cross-platform and
-# multiple-GHC-version support. For more information and other
-# options, see:
-#
-# https://docs.haskellstack.org/en/stable/travis_ci/
-#
-# Copy these contents into the root directory of your Github project in a file
-# named .travis.yml
-
-# Choose a build environment
 dist: xenial
-
-# Do not choose a language; we provide our own build tools.
 language: generic
-
-# Caching so the next build will be fast too.
 cache:
   directories:
-  - $HOME/.stack
-
-# Ensure necessary system libraries are present
+  - "$HOME/.stack"
 addons:
   apt:
     packages:
-      - libgmp-dev
-
+    - libgmp-dev
 before_install:
-# Download and unpack the stack executable
 - mkdir -p ~/.local/bin
 - export PATH=$HOME/.local/bin:$PATH
-- travis_retry curl -L https://get.haskellstack.org/stable/linux-x86_64.tar.gz | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
-
+- travis_retry curl -L https://get.haskellstack.org/stable/linux-x86_64.tar.gz | tar
+  xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
 install:
-# Build dependencies
 - stack --no-terminal --install-ghc test --only-dependencies
-
 script:
-# Build the package, its tests, and its docs and run the tests
 - stack --no-terminal test --haddock --no-haddock-deps
+before_deploy:
+- stack install cabal-install
+deploy:
+  provider: hackage
+  username: kkweon
+  password:
+    secure: KC7bOCANukc+OYyGUOGYqbav1+jL9oW9eAnphkGIxz9HkscJfPQHro5iY15v9QkXnaYg/YLZpF26Xv2JyFMaRI17l2C4Abdi4cdJe/vlBKq5xphm/J0cxePnnsWnv0WCbOAeJSzPTiXZJ/0REyKma0hPn06w9W3zxPUkvZsa3ynZp2EpKuTGb65lK3lnjrNGQ3XSGRqd3Edr+wHHvpCggrvHHsfKNtygY6E1OUYM02mty8cIwcMj0ouaFm4DIgd91uQ8FUDBEBQBY7Z0sMD3k5XK4iuYeGbWUoDI3xZ94I740fZW3LQqJTEhirEKeEZuMSC28mi0fFpcYpFwsEYQL+wH6KFDIZoDxEEcPt/SHkD2+UccNnmAkufW9OD/q/hNEkzcVOC1RvlPccMxzGz8MV3/tfm5KyUJcTN08SJP6dHBe9s4RO7+XziGwkebQLG+nbkVrqegTgUWrIWTMh/FbZ7qn8NXHngcAgY5zmwK7giqJdFauX8PUh8/8oKgk5q/UAsVDcozgn+YcCczZI2I6epTk7eW7+/Mmx0S1MF56PdHByS1fPJSkVx38ay6BtQOY+70NItNCxfWJX8Ste/bQKjLK9vrNakCGrqW6eWupmpLV7UxDOfZ2wrlu3PAnb6tcNWXvPLSmDb7YlHzmhKigc97IrCY9rUW4vRVc7Vku4c=
+  on:
+    repo: kkweon/korea-holidays
+    branch: master
