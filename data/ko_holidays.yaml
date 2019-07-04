@@ -1,29 +1,17 @@
 - name: "New Year's Day"
   date: 1-1
 
-- name: "Korean New Year"
-  date: 1-1
-  lunar: true
-
 - name: "March 1 Movement Day"
   date: 3-1
 
 - name: "Children's Day"
   date: 5-5
 
-- name: "Buddha's Birthday"
-  date: 4-8
-  lunar: true
-
 - name: "Memorial Day"
   date: 6-6
 
 - name: "National Liberation Day"
   date: 8-15
-
-- name: "Chuseok"
-  date: 8-15
-  lunar: true
 
 - name: "National Foundation Day"
   date: 10-3
@@ -33,3 +21,192 @@
 
 - name: "Christmas"
   date: 12-25
+
+- name: "Korean New Year"
+  date: 2009-1-26
+
+- name: "Korean New Year"
+  date: 2010-2-14
+
+- name: "Korean New Year"
+  date: 2011-2-3
+
+- name: "Korean New Year"
+  date: 2012-1-23
+
+- name: "Korean New Year"
+  date: 2013-2-10
+
+- name: "Korean New Year"
+  date: 2014-1-31
+
+- name: "Korean New Year"
+  date: 2015-2-19
+
+- name: "Korean New Year"
+  date: 2016-2-8
+
+- name: "Korean New Year"
+  date: 2017-1-28
+
+- name: "Korean New Year"
+  date: 2018-2-16
+
+- name: "Korean New Year"
+  date: 2019-2-5
+
+- name: "Korean New Year"
+  date: 2020-1-25
+
+- name: "Korean New Year"
+  date: 2021-2-12
+
+- name: "Korean New Year"
+  date: 2022-2-1
+
+- name: "Korean New Year"
+  date: 2023-1-22
+
+- name: "Korean New Year"
+  date: 2024-2-10
+
+- name: "Korean New Year"
+  date: 2025-1-29
+
+- name: "Korean New Year"
+  date: 2026-2-17
+
+- name: "Korean New Year"
+  date: 2027-2-7
+
+- name: "Korean New Year"
+  date: 2028-1-27
+
+- name: "Korean New Year"
+  date: 2029-2-13
+
+- name: "Buddha's Birthday"
+  date: 2009-5-2
+
+- name: "Buddha's Birthday"
+  date: 2010-5-21
+
+- name: "Buddha's Birthday"
+  date: 2011-5-10
+
+- name: "Buddha's Birthday"
+  date: 2012-5-28
+
+- name: "Buddha's Birthday"
+  date: 2013-5-17
+
+- name: "Buddha's Birthday"
+  date: 2014-5-6
+
+- name: "Buddha's Birthday"
+  date: 2015-5-25
+
+- name: "Buddha's Birthday"
+  date: 2016-5-14
+
+- name: "Buddha's Birthday"
+  date: 2017-5-3
+
+- name: "Buddha's Birthday"
+  date: 2018-5-22
+
+- name: "Buddha's Birthday"
+  date: 2019-5-12
+
+- name: "Buddha's Birthday"
+  date: 2020-4-30
+
+- name: "Buddha's Birthday"
+  date: 2021-5-19
+
+- name: "Buddha's Birthday"
+  date: 2022-5-8
+
+- name: "Buddha's Birthday"
+  date: 2023-5-27
+
+- name: "Buddha's Birthday"
+  date: 2024-5-15
+
+- name: "Buddha's Birthday"
+  date: 2025-5-5
+
+- name: "Buddha's Birthday"
+  date: 2026-5-24
+
+- name: "Buddha's Birthday"
+  date: 2027-5-13
+
+- name: "Buddha's Birthday"
+  date: 2028-5-2
+
+- name: "Buddha's Birthday"
+  date: 2029-5-20
+
+- name: "Chuseok"
+  date: 2009-10-3
+
+- name: "Chuseok"
+  date: 2010-9-22
+
+- name: "Chuseok"
+  date: 2011-9-12
+
+- name: "Chuseok"
+  date: 2012-9-30
+
+- name: "Chuseok"
+  date: 2013-9-19
+
+- name: "Chuseok"
+  date: 2014-9-8
+
+- name: "Chuseok"
+  date: 2015-9-27
+
+- name: "Chuseok"
+  date: 2016-9-15
+
+- name: "Chuseok"
+  date: 2017-10-4
+
+- name: "Chuseok"
+  date: 2018-9-24
+
+- name: "Chuseok"
+  date: 2019-9-13
+
+- name: "Chuseok"
+  date: 2020-10-1
+
+- name: "Chuseok"
+  date: 2021-9-21
+
+- name: "Chuseok"
+  date: 2022-9-10
+
+- name: "Chuseok"
+  date: 2023-9-29
+
+- name: "Chuseok"
+  date: 2024-9-17
+
+- name: "Chuseok"
+  date: 2025-10-6
+
+- name: "Chuseok"
+  date: 2026-9-25
+
+- name: "Chuseok"
+  date: 2027-9-15
+
+- name: "Chuseok"
+  date: 2028-10-3
+
+- name: "Chuseok"
+  date: 2029-9-22
