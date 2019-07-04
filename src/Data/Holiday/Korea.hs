@@ -15,14 +15,8 @@ module Data.Holiday.Korea where
 
 import Data.Aeson.Types (FromJSON, (.:), parseJSON, withObject)
 import Data.Holiday.Model (Date(..), Holiday(..))
-import Data.Maybe (fromJust)
-
--- | 'sinJeong' is the new year holiday.
-sinJeong :: Holiday
-sinJeong = Holiday {date = MD (1, 1), name = "SinJeong", lunar = Nothing}
-
-samIlJeol :: Holiday
-samIlJeol = Holiday {date = MD (3, 1), name = "SamIlJeol", lunar = Nothing}
+import Data.Maybe (fromJust, listToMaybe)
+import Util.Config (holidays)
 
 -- | 'getHoliday' returns Nothing if there is no Korean holiday.
 getHoliday ::
@@ -30,7 +24,11 @@ getHoliday ::
   -> Int -- ^ Month
   -> Int -- ^ Day
   -> Maybe Holiday
-getHoliday year month day
-  | month == 1 && day == 1 = Just sinJeong
-  | month == 3 && day == 1 = Just samIlJeol
-  | otherwise = Nothing
+getHoliday year month day = listToMaybe $ filter match holidays
+  where
+    match :: Holiday -> Bool
+    match Holiday {date = YMD (y, m, d)}
+      | y == year && m == month && d == day = True
+    match Holiday {date = MD (m, d)}
+      | m == month && d == day = True
+    match _ = False

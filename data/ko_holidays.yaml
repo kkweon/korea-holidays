@@ -1,35 +1,35 @@
-- name: "신정"
+- name: "New Year's Day"
   date: 1-1
 
-- name: "설날"
+- name: "Korean New Year"
   date: 1-1
   lunar: true
 
-- name: "삼일절"
+- name: "March 1 Movement Day"
   date: 3-1
 
-- name: "어린이날"
+- name: "Children's Day"
   date: 5-5
 
-- name: "석가탄신일"
+- name: "Buddha's Birthday"
   date: 4-8
   lunar: true
 
-- name: "현충일"
+- name: "Memorial Day"
   date: 6-6
 
-- name: "광복절"
+- name: "National Liberation Day"
   date: 8-15
 
-- name: "추석"
+- name: "Chuseok"
   date: 8-15
   lunar: true
 
-- name: "개천절"
+- name: "National Foundation Day"
   date: 10-3
 
-- name: "한글날"
+- name: "Hangul Day"
   date: 10-9
 
-- name: "크리스마스"
+- name: "Christmas"
   date: 12-25
