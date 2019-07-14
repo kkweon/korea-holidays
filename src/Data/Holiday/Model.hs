@@ -16,22 +16,15 @@ It contains data models for Holiday
 module Data.Holiday.Model
   ( Date(..)
   , Holiday(..)
-  )
-where
+  ) where
 
-import           Control.Monad.Extra            ( liftMaybe )
-import           Data.Aeson.Types               ( FromJSON
-                                                , Parser
-                                                , (.:)
-                                                , (.:?)
-                                                , parseJSON
-                                                , withObject
-                                                )
-import           Data.List.Split                ( splitOn )
-import           Data.Maybe                     ( fromMaybe )
-import           GHC.Generics                   ( Generic )
-import           Language.Haskell.TH.Syntax     ( Lift )
-import           Text.Read                      ( readMaybe )
+import Control.Monad.Extra (liftMaybe)
+import Data.Aeson.Types (FromJSON, (.:), parseJSON, withObject)
+import Data.List.Split (splitOn)
+import Data.Maybe (fromMaybe)
+import GHC.Generics (Generic)
+import Language.Haskell.TH.Syntax (Lift)
+import Text.Read (readMaybe)
 
 data Date
   = YMD (Integer, Int, Int) -- ^ (Year, Month, Day) Some Holiday has a different date every year
@@ -39,10 +32,12 @@ data Date
   deriving (Show, Eq, Lift)
 
 -- | 'Holiday' represents the date of holiday and the name of holiday.
-data Holiday = Holiday
-  { date :: Date -- ^ Date of the holiday
-  , name :: String -- ^ Name of the holiday
-  } deriving (Show, Eq, Generic, Lift)
+data Holiday =
+  Holiday
+    { date :: Date -- ^ Date of the holiday
+    , name :: String -- ^ Name of the holiday
+    }
+  deriving (Show, Eq, Generic, Lift)
 
 instance FromJSON Holiday where
   parseJSON =
@@ -53,32 +48,40 @@ instance FromJSON Holiday where
         liftMaybe $ parseKoreanDate s
 
 parseKoreanDate :: String -> Maybe Date
-parseKoreanDate xs = case splitOn "-" xs of
-  [y, m, d] | verifyYmd y m d -> Just $ YMD (read y, read m, read d)
-  [m, d] | verifyMd m d       -> Just $ MD (read m, read d)
-  _                           -> Nothing
+parseKoreanDate xs =
+  case splitOn "-" xs of
+    [y, m, d]
+      | verifyYmd y m d -> Just $ YMD (read y, read m, read d)
+    [m, d]
+      | verifyMd m d -> Just $ MD (read m, read d)
+    _ -> Nothing
 
 verifyYmd :: String -> String -> String -> Bool
-verifyYmd y m d = fromMaybe False $ do
-  year  <- readMaybe y :: Maybe Integer
-  month <- readMaybe m :: Maybe Int
-  day   <- readMaybe d :: Maybe Int
-  return $ isValidYear year && isValidMonth month && isValidDay day
+verifyYmd y m d =
+  fromMaybe False $ do
+    year <- readMaybe y :: Maybe Integer
+    month <- readMaybe m :: Maybe Int
+    day <- readMaybe d :: Maybe Int
+    return $ isValidYear year && isValidMonth month && isValidDay day
 
 verifyMd :: String -> String -> Bool
-verifyMd m d = fromMaybe False $ do
-  month <- readMaybe m :: Maybe Int
-  day   <- readMaybe d :: Maybe Int
-  return $ isValidMonth month && isValidDay day
+verifyMd m d =
+  fromMaybe False $ do
+    month <- readMaybe m :: Maybe Int
+    day <- readMaybe d :: Maybe Int
+    return $ isValidMonth month && isValidDay day
 
 isValidYear :: Integer -> Bool
-isValidYear y | 1900 <= y && y <= 3000 = True
-              | otherwise              = False
+isValidYear y
+  | 1900 <= y && y <= 3000 = True
+  | otherwise = False
 
 isValidMonth :: Int -> Bool
-isValidMonth m | 1 <= m && m <= 12 = True
-               | otherwise         = False
+isValidMonth m
+  | 1 <= m && m <= 12 = True
+  | otherwise = False
 
 isValidDay :: Int -> Bool
-isValidDay d | 1 <= d && d <= 31 = True
-             | otherwise         = False
+isValidDay d
+  | 1 <= d && d <= 31 = True
+  | otherwise = False

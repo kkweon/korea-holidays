@@ -13,4 +13,4 @@ upload:
 	stack upload .
 
 format:
-	find src -type f -exec brittany --write-mode=inplace {} +
+	find src -type f -not -path '*/Config.hs' -exec hindent --sort-imports {} +

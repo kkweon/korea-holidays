@@ -1,50 +1,49 @@
-name:                korea-holidays
-version:             0.1.0.3
-github:              "githubuser/korea-holidays"
-license:             MIT
-author:              "Kyung Mo Kweon"
-maintainer:          "kkweon@gmail.com"
-copyright:           "2019 Kyung Mo Kweon"
+name: korea-holidays
+version: 0.1.0.4
+github: 'kkweon/korea-holidays'
+license: MIT
+author: 'Kyung Mo Kweon'
+maintainer: 'kkweon@gmail.com'
+copyright: '2019 Kyung Mo Kweon'
 
 extra-source-files:
-- README.md
-- ChangeLog.md
+  - README.md
 
 data-files:
-- data/ko_holidays.yaml
+  - data/ko_holidays.yaml
 
 # Metadata used when publishing your package
-synopsis:            Korea Holidays
-category:            Time
+synopsis: Korea Holidays
+category: Time
 
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/kkweon/korea-holidays#readme>
+description: Please see the README on GitHub at <https://github.com/kkweon/korea-holidays#readme>
 
 dependencies:
-- base >= 4.7 && < 5
-- split
-- yaml
-- monad-extras
-- aeson
-- template-haskell
+  - base >= 4.7 && < 5
+  - split
+  - yaml
+  - monad-extras
+  - aeson
+  - template-haskell
+  - time
 
 library:
   source-dirs: src
   exposed-modules:
-  - Data.Holiday.Korea
-  - Data.Holiday.Model
-
+    - Data.Holiday.Korea
+    - Data.Holiday.Model
 
 tests:
   korea-holidays-test:
-    main:                Spec.hs
-    source-dirs:         test
+    main: Spec.hs
+    source-dirs: test
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - korea-holidays
-    - hspec
+      - korea-holidays
+      - hspec
